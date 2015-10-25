@@ -16,5 +16,26 @@ namespace ObjectMessaging
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ISenderReceiver obj = new HelloBuilder();
+
+            ShowMessage(obj);
+
+            obj = new HiBuilder();
+
+
+            obj.Receive("Humayun");
+            ShowMessage(obj);
+
+        }
+
+        private static void ShowMessage(ISenderReceiver obj)
+        {
+            obj.Receive("Humayun");
+            MessageBox.Show(obj.Send(), "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
     }
 }
