@@ -37,5 +37,16 @@ namespace ObjectMessaging
             MessageBox.Show(obj.Send(), "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            ISenderReceiver obj = null;
+            if (radioButton1.Checked)
+                obj = new HelloBuilder();
+            else if(radioButton2.Checked)
+                obj = new HiBuilder();
+
+            ShowMessage(obj);
+        }
     }
 }
