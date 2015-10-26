@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ObjectMessaging
+﻿namespace ObjectMessaging
 {
     class ObjectFactory
     {
@@ -16,6 +10,26 @@ namespace ObjectMessaging
         public static ISenderReceiver GetHiBuilder()
         {
             return new HiBuilder();
+        }
+        public enum BuilderType
+        {
+            Hello,
+            Hi
+            
+        }
+        public static ISenderReceiver GetBuilder(BuilderType type)
+        {
+            ISenderReceiver people = null;
+            switch (type)
+            {
+                case BuilderType.Hello:
+                    people = new HelloBuilder();
+                    break;
+                case BuilderType.Hi:
+                    people = new HiBuilder();
+                    break;
+            }
+            return people;
         }
     }
 }
