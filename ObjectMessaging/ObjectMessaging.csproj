@@ -55,6 +55,7 @@
     <Compile Include="HelloBuilder.cs" />
     <Compile Include="HiBuilder.cs" />
     <Compile Include="ISenderReceiver.cs" />
+    <Compile Include="ObjectFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

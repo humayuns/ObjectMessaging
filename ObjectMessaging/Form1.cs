@@ -42,9 +42,9 @@ namespace ObjectMessaging
 
             ISenderReceiver obj = null;
             if (radioButton1.Checked)
-                obj = new HelloBuilder();
+                obj = ObjectFactory.GetHelloBuiler();
             else if(radioButton2.Checked)
-                obj = new HiBuilder();
+                obj = ObjectFactory.GetHiBuilder();
 
             ShowMessage(obj);
         }
